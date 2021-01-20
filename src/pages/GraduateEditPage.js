@@ -17,7 +17,7 @@ const GraduateEditPage = ({ match }) => {
       const fetchData = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:3030/graduates/${_id}`,
+            `/graduates/${_id}`,
           );
           dispatch({
             type: "FETCH_GRADUATE",

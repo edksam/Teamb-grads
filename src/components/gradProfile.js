@@ -41,7 +41,7 @@ const GraduateProfile = ({ graduate }) => {
   //Delete Graduate
   const deleteGraduate = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:3030/graduates/${id}`);
+      const response = await axios.delete(`/graduates/${id}`);
       dispatch({
         type: "DELETE_GRADUATE",
         payload: response.data,

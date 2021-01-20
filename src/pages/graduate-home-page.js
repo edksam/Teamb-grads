@@ -12,7 +12,7 @@ const GraduateHomePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3030/graduates");
+        const response = await axios.get("/graduates");
         dispatch({
           type: "FETCH_GRADUATES",
           payload: response.data.data || response.data, //in case pagination is disabled

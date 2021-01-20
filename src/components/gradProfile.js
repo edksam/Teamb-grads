@@ -6,7 +6,7 @@ import axios from "axios";
 import { GraduateContext } from "../context/graduate-context";
 import { flashErrorMessage } from "../components/flash-message";
 import { useAuth0 } from "@auth0/auth0-react";
-import { moment } from "moment";
+
 import {
   Card,
   Space,
@@ -41,7 +41,7 @@ const GraduateProfile = ({ graduate }) => {
   //Delete Graduate
   const deleteGraduate = async (id) => {
     try {
-      const response = await axios.delete(`/graduates/${id}`);
+      const response = await axios.delete(`http://localhost:3030/graduates/${id}`);
       dispatch({
         type: "DELETE_GRADUATE",
         payload: response.data,

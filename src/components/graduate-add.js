@@ -20,7 +20,7 @@ const GraduateAdd = ({ graduate }) => {
   const createGraduate = async (data) => {
     try {
       const response = await axios.post(
-        "/graduates",
+        "http://localhost:3030/graduates",
         data,
       );
       dispatch({
@@ -41,7 +41,7 @@ const GraduateAdd = ({ graduate }) => {
   const updateGraduate = async (data) => {
     try {
       const response = await axios.patch(
-        `/graduates/${graduate._id}`,
+        `http://localhost:3030/graduates/${graduate._id}`,
         data,
       );
       dispatch({

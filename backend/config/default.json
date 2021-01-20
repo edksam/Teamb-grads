@@ -1,0 +1,10 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "mongodb": "mongodb+srv://cyf_user:TeamBeau1@cyf.9ybko.mongodb.net/graduatesdb?retryWrites=true&w=majority"
+}

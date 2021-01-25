@@ -29,6 +29,9 @@ body {
   margin: 16px 24px 16px 0;
   background: rgba(247, 241, 241, 0.993);
 }
+.site-page-header-responsive {
+  max-width: 500px;
+}
 
 .ant-row-rtl .logo {
   float: right;
@@ -91,5 +94,17 @@ body {
   #components-page-header-demo-content .image {
     flex: 100%;
     margin: 24px 0 0;
+  }
+}
+@media (max-width: 576px) {
+  #components-page-header-demo-content .image {
+    flex: 100%;
+    margin: 24px 0 0;
+  }
+}
+@media (max-width: 576px) {
+  .site-page-header-responsive {
+    flex: 100%;
+    margin: 50px 0 0;
   }
 }

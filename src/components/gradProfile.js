@@ -41,7 +41,7 @@ const GraduateProfile = ({ graduate }) => {
   //Delete Graduate
   const deleteGraduate = async (id) => {
     try {
-      const response = await axios.delete(`/graduates/${id}`);
+      const response = await axios.delete(`https://teamb-grads.herokuapp.com/graduates/${id}`);
       dispatch({
         type: "DELETE_GRADUATE",
         payload: response.data,

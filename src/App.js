@@ -1,6 +1,6 @@
 import "./App.less";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Layout, Menu, PageHeader } from "antd";
+import { Layout, Menu, PageHeader, Avatar } from "antd";
 import logo from "./logo.png";
 import GraduateHomePage from "./pages/graduate-home-page";
 import GraduateAddPage from "./pages/graduate-add-page";
@@ -24,8 +24,10 @@ const App = () => {
         <NavBar />
         <Content style={{ padding: "0 20px" }}>
           <PageHeader
-            className="site-page-header"
             title="Welcome to CYF Graduates Directory"
+            className="site-page-header-responsive"
+            breakpoint="lg"
+            collapsedWidth="0"
           />
         </Content>
 
@@ -55,7 +57,7 @@ const App = () => {
           </Route>
         </Switch>
         <Footer style={{ textAlign: "center" }}>
-          Copyright @ 2021 Code Your Future
+          Copyright &copy; Code Your Future 2021
         </Footer>
       </Layout>
     </Router>
@@ -63,7 +65,7 @@ const App = () => {
 };
 
 const NavBar = () => {
-  const { isAuthenticated } = useAuth0();
+  const { isAuthenticated, user } = useAuth0();
   return (
     <>
       <Header>
@@ -73,7 +75,13 @@ const NavBar = () => {
           </span>
         </Link>
 
-        <Menu style={{ float: "right" }} theme="dark" mode="horizontal">
+        <Menu
+          style={{ float: "right" }}
+          theme="dark"
+          mode="horizontal"
+          breakpoint="lg"
+          collapsedWidth="0"
+        >
           {isAuthenticated && (
             <>
               <Menu.Item>
@@ -81,6 +89,9 @@ const NavBar = () => {
                   Graduates Page
                 </Link>
               </Menu.Item>
+              <Menu.Item><span>{user.name}</span></Menu.Item>
+              <Avatar src={user.picture} />
+
               <Menu.Item>
                 <LogoutButton />
               </Menu.Item>

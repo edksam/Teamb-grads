@@ -12,7 +12,7 @@ const GraduateHomePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/graduates");
+        const response = await axios.get("https://teamb-grads.herokuapp.com/graduates");
         dispatch({
           type: "FETCH_GRADUATES",
           payload: response.data.data || response.data, //in case pagination is disabled

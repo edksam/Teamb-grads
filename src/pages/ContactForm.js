@@ -9,7 +9,7 @@ class ContactForm extends React.PureComponent {
     this.state = {
       name: "",
       email: "",
-      subject: "",
+      graduate_name: "",
       message: "",
     };
 
@@ -20,12 +20,12 @@ class ContactForm extends React.PureComponent {
 
   handleSubmit(event) {
     event.preventDefault();
-    const { name, email, subject, message } = this.state;
+    const { name, email, graduate_name, message } = this.state;
     const templateParams = {
       from_name: name,
       from_email: email,
       to_name: "/*YOUR NAME OR COMPANY*/",
-      subject,
+      graduate_name,
       message_html: message,
     };
     emailjs.send(
@@ -44,7 +44,7 @@ class ContactForm extends React.PureComponent {
     this.setState({
       name: "",
       email: "",
-      subject: "",
+      graduate_name: "",
       message: "",
     });
   }
@@ -54,7 +54,7 @@ class ContactForm extends React.PureComponent {
   }
 
   render() {
-    const { name, email, subject, message } = this.state;
+    const { name, email, graduate_name, message } = this.state;
 
     return (
       <div>
@@ -79,13 +79,13 @@ class ContactForm extends React.PureComponent {
             onChange={this.handleChange}
           />
           <br />
-          <label>Subject</label>
+          <label>Graduate Name</label>
 
           <input
-            name="subject"
+            name="graduate_name"
             type="text"
-            placeholder="What is the subject?"
-            value={subject}
+            placeholder="Name of Graduate"
+            value={graduate_name}
             onChange={this.handleChange}
           />
 

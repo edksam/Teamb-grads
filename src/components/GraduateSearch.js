@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Form, Row, Col, Input, Checkbox, Card} from "antd";
+import { Form, Row, Col, Input, Checkbox, Card } from "antd";
 import { GraduateContext } from "../context/graduate-context";
-
 
 const GraduateSearch = () => {
   const [state, dispatch] = useContext(GraduateContext);
@@ -28,7 +27,6 @@ const GraduateSearch = () => {
     internship,
     temp,
   } = checkBoxState;
-
 
   useEffect(() => {
     if (state.graduates.length === 0) {
@@ -115,13 +113,19 @@ const GraduateSearch = () => {
                 >
                   Part Time
                 </Checkbox>
-
+                <Checkbox
+                  checked={temp}
+                  onChange={handleCheckBox}
+                  name="temp"
+                >
+                  Temp
+                </Checkbox>
                 <Checkbox
                   checked={internship}
                   onChange={handleCheckBox}
                   name="internship"
                 >
-                  Temp
+                  Internship
                 </Checkbox>
               </Row>
             </Col>
@@ -183,9 +187,7 @@ const GraduateSearch = () => {
               style={{
                 textAlign: "right",
               }}
-            >
-
-            </Col>
+            ></Col>
           </Row>
         </Form>
       </Card>

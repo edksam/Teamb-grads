@@ -73,26 +73,30 @@ const GraduateSearch = () => {
         opportunities. Check out our graduate directory to see if they may
         be right fit for you"
         bordered={false}
-        style={{ width: "100%", textAlign: "center", fon: "5rem" }}
+        style={{ width: "100%", textAlign: "center", font: "5rem" }}
       >
         <Form
           form={form}
           name="advanced_search"
           className="ant-advanced-search-form"
         >
-          <Row gutter={10}>
-            <Col span={14}>
-              <Form.Item name="current_location" label="Current Location">
+          <Row gutter={60}>
+            <Col span={12}>
+              <Form.Item
+                name="current_location"
+                label="Current Location"
+                placeholder="Current Location"
+                rules={[
+                  {
+                    required: true,
+                    message: "Input something!",
+                  },
+                ]}
+              >
                 <Input
                   placeholder="Current Location"
                   onChange={handleLocation}
-                  checked={location}
-                  rules={[
-                    {
-                      required: true,
-                      message: "Input something!",
-                    },
-                  ]}
+                  value={location}
                 />
               </Form.Item>
             </Col>
@@ -113,11 +117,7 @@ const GraduateSearch = () => {
                 >
                   Part Time
                 </Checkbox>
-                <Checkbox
-                  checked={temp}
-                  onChange={handleCheckBox}
-                  name="temp"
-                >
+                <Checkbox checked={temp} onChange={handleCheckBox} name="temp">
                   Temp
                 </Checkbox>
                 <Checkbox
@@ -131,8 +131,8 @@ const GraduateSearch = () => {
             </Col>
           </Row>
 
-          <Row gutter={10}>
-            <Col span={14}>
+          <Row gutter={60}>
+            <Col span={12}>
               <Form.Item
                 name="languages"
                 label="Language Spoken"
@@ -174,9 +174,6 @@ const GraduateSearch = () => {
                   name="contract"
                 >
                   Contract
-                </Checkbox>
-                <Checkbox checked={temp} onChange={handleCheckBox} name="temp">
-                  Temp
                 </Checkbox>
               </Row>
             </Col>

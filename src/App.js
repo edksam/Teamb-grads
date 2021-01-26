@@ -13,11 +13,23 @@ import ContactForm from "./pages/ContactForm";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./pages/LoginButton";
 import LogoutButton from "./pages/LogoutButton";
-// import GraduateAdd from "./components/graduate-add";
 
 const { Header, Content, Footer } = Layout;
 
+const injectGA = () => {
+  if (typeof window == "undefined") {
+    return;
+  }
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-3Q0BC5HG21");
+};
+
 const App = () => {
+  injectGA();
   return (
     <Router>
       <Layout className="layout">
@@ -89,7 +101,9 @@ const NavBar = () => {
                   Graduates Page
                 </Link>
               </Menu.Item>
-              <Menu.Item><span>{user.name}</span></Menu.Item>
+              <Menu.Item>
+                <span>{user.name}</span>
+              </Menu.Item>
               <Avatar src={user.picture} />
 
               <Menu.Item>

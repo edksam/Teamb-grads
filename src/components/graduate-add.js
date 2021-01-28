@@ -20,7 +20,7 @@ const GraduateAdd = ({ graduate }) => {
   const createGraduate = async (data) => {
     try {
       const response = await axios.post(
-        "/graduates",
+        "https://teamb-grads.herokuapp.com/graduates",
         data,
       );
       dispatch({
@@ -40,10 +40,7 @@ const GraduateAdd = ({ graduate }) => {
 
   const updateGraduate = async (data) => {
     try {
-      const response = await axios.patch(
-        `/graduates/${graduate._id}`,
-        data,
-      );
+      const response = await axios.patch(`https://teamb-grads.herokuapp.com/graduates/${graduate._id}`, data);
       dispatch({
         type: "UPDATE_GRADUATE",
         payload: response.data,

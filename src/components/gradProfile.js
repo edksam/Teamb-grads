@@ -52,6 +52,8 @@ const GraduateProfile = ({ graduate }) => {
     }
   };
 
+  //Redirect to home
+
   if (redirect) {
     return <Redirect to="/" />;
   }

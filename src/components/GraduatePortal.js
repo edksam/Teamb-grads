@@ -110,13 +110,6 @@ const GraduatePortal = ({ graduate }) => {
             </p>
           </Panel>
         </Collapse>
-        {/* <Space>
-          <>
-            <Link to="/contact">
-              <Button type="primary">Email CYF</Button>
-            </Link>
-          </>
-        </Space> */}
       </Card>
     </div>
   );
